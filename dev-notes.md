@@ -177,6 +177,39 @@ Security: Avoid hardcoding secrets in notebooks; use environment variables if ne
 Testing: For code in notebooks, extract reusable functions into .py files and add unit tests using pytest (install via pip install pytest).
 
 
+# Step 5: Sync and Backup
+
+Ensure your repo is public or private as desired (check on GitHub: https://github.com/btholath/ai-systems-lab).
+Confirm the push succeeded by checking GitHub for your commits.
+Add a .github/workflows/ci.yml for CI/CD later (e.g., linting notebooks or running tests)
+mkdir -p .github/workflows
+touch .github/workflows/ci.yml
+
+name: CI
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - run: pip install flake8
+    - run: flake8 .
+
+Next Steps
+If the push succeeds, you’re ready to develop content (e.g., add notebooks to 01_python_basics with Python tutorials).
+If you plan to use large files (e.g., datasets), revisit Git LFS setup.
+For each folder, create notebooks and update its README.md with descriptions and links (e.g., [Basics Notebook](./basics.ipynb)).
+
+Troubleshooting Tips
+
+Push Still Fails: Check git remote -v to ensure the repo URL is correct (https://github.com/btholath/ai-systems-lab). If authentication is the issue, regenerate a personal access token on GitHub and authenticate.
+Jupyter Not Working: Verify the virtual env is active (source .venv/bin/activate) and dependencies are installed (pip list should show jupyter, numpy, etc.).
+Codespaces Issues: Rebuild the container (Codespaces icon > Rebuild) to apply devcontainer.json.
+
+
 # SECTION: 01_python_basics
 # 01_python_basics/README.md
 # Python Basics
