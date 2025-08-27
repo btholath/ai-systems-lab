@@ -1,0 +1,19 @@
+{
+  "name": "AI Systems Lab",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "github.copilot"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install --upgrade pip && pip install jupyter numpy pandas matplotlib scikit-learn torch torchvision",
+  "remoteUser": "vscode"
+}
