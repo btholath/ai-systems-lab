@@ -43,3 +43,28 @@ git add 01_python_basics/basics.ipynb
 git commit -m "Add initial content to basics.ipynb"
 git push origin main
 
+Check .github/workflows/ci.yml:
+Your CI workflow looks like a linting setup with flake8. Ensure it’s functional by pushing a change and checking the Actions tab on GitHub (https://github.com/btholath/ai-systems-lab/actions). If you want to lint notebooks too, install nbqa:
+
+pip install nbqa
+
+
+Update ci.yml to lint notebooks:
+name: CI
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - run: pip install flake8 nbqa
+    - run: flake8 .
+    - run: nbqa flake8 *.ipynb --extend-ignore=E402,E501
+
+
+Step 3: Develop Content for 01_python_basics
+Start populating basics.ipynb with educational content to set the tone for your lab. Here’s a suggested structure for basics.ipynb:
+    
