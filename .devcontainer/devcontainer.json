@@ -15,5 +15,8 @@
     }
   },
   "postCreateCommand": "pip install --upgrade pip && pip install jupyter numpy pandas matplotlib scikit-learn torch torchvision",
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "PYTHONPATH": "/workspaces/ai-systems-lab:${PYTHONPATH}"
+  }
 }
