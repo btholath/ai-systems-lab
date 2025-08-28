@@ -24,8 +24,6 @@ print
 determinant = np.linalg.det(A)
 print("Determinant: ", determinant)
 print("Matrix A: \n", A)
-
-
 # The **determinant** is a single number that tells you how "invertible" or "stretchy" a matrix is.
 # If the determinant is **zero**, the matrix can't be inverted.
 # In machine learning, determinants help in understanding transformations and solving equations.
@@ -33,18 +31,19 @@ print("Matrix A: \n", A)
 
 """
 ### 🔍 Singular Value Decomposition (SVD)
-
 """
 U, S, Vt = np.linalg.svd(A)
 print("U: \n", U)
 print("Singular Values: \n", S)
 print("V Transpose: \n", Vt)
-
 """
 - **SVD** breaks a matrix into three parts: `U`, `S`, and `Vt`.
 - It’s like reverse-engineering the matrix to understand its structure.
 - Used in **dimensionality reduction** (like PCA), **image compression**, and **recommendation systems**.
 """
+
+
+
 
 """
 ### 🔁 Inverse of a Matrix
