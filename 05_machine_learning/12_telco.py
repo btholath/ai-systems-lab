@@ -1,3 +1,29 @@
+"""
+Title: Telco Customer Churn Prediction
+Key steps
+  - Define the problem: 
+    - Identify the objective: Regression or Classification
+    
+  - Data Preparation
+    - Understand the structure of the dataset.
+    - Visualize the data to identify patterns and relationships.
+    - Clean the data by handling missing values and outliers.
+    - Encode categorical variables and scale numerical features.
+    - Split the dataset into training and testing sets. 
+    - Model Selection and Training
+    - Choose appropriate models (e.g., Logistic Regression, k-NN).
+    - Train the models using the training dataset.
+    - Hyperparameter tuning to optimize model performance.
+  - Model Evaluation
+    - Evaluate the models using metrics such as accuracy, precision, recall, F1-score, and confusion matrix.
+    - Compare the performance of different models.
+    - Visualize the results using plots and charts.
+    - Deployment and Monitoring
+    - Deploy the best-performing model for real-time predictions.
+    - Monitor the model's performance over time and retrain as necessary.
+    
+"""
+
 # Task 1: Perform EDA and Preprocessing
 import pandas as pd
 import seaborn as sns
